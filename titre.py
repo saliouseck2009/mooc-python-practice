@@ -53,3 +53,5 @@ class Titre :
 
 title ="1971;Meddle;San Tropez;3:43"
 PINK_FLOYD=Titre.loadData()
+titre = Titre(titre="Meddle",album="coooloool", annee="1892", duree=Duree(0,12,15))
+print(titre)
