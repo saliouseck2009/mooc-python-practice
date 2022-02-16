@@ -23,9 +23,11 @@ class Duree :
     def sec(self,sec):
         self.sec = sec
     def __repr__(self):
-        return f"Duree({self.__heure},{self.__min}, {self.__sec})"
+        duree=Duree.correct_duree(heure=self.__heure, min=self.__min, sec=self.__sec)
+        return f"Duree({duree.heure},{duree.min:02}, {duree.sec:02})"
     def __str__(self):
-        return f"heure:{self.__heure} min: {self.__min} sec: {self.__sec}"
+        duree=Duree.correct_duree(heure=self.__heure, min=self.__min, sec=self.__sec)
+        return f"Duree({duree.heure},{duree.min:02}, {duree.sec:02})"
 
     def __gt__(self, autre_duree):
         if(self.__heure> autre_duree.heure):
@@ -92,7 +94,9 @@ class Duree :
             
 d0=Duree(0,0,34)
 d1=Duree(0,0,52)
-print(d0+d1)
+#print(d0+d1)
 Duree.duree("6:19:20")
-print(Duree.duree("70:70"))
-print(Duree.correct_duree(1,0,70))
+#print(Duree.duree("70:70"))
+#print(Duree.correct_duree(1,0,70))
+print(Duree(12, 754, 8766577))
+print(Duree(0, 70, 60))
